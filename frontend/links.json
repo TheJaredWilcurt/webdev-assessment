@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "name": "Kiva",
+      "url": "https://kiva.org"
+    },
+    {
+      "name": "Water.org",
+      "url": "https://water.org"
+    },
+    {
+      "name": "UNICEF",
+      "url": "https://unicef.org"
+    },
+    {
+      "name": "Doctors Without Borders",
+      "url": "https://doctorswithoutborders.org"
+    },
+    {
+      "name": "Last Mile Health",
+      "url": "https://lastmilehealth.org"
+    }
+  ]
+}

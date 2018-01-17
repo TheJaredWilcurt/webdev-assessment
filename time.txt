@@ -1,0 +1,16 @@
+
+Use this file to keep track of how much time you spent working on this takehome assessment.
+Pro-Tip: If you store your times as Unix timestamps it makes the math of time-spent easier.
+
+
+Start time:
+
+
+
+
+
+
+
+
+Total time:
+

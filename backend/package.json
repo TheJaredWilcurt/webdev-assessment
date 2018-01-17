@@ -1,0 +1,22 @@
+{
+  "name": "webdev-assessment-backend",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jest --env=node --forceExit",
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "jest": "^22.0.4"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/*.js"
+    ]
+  }
+}

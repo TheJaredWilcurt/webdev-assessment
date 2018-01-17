@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge #2: DOM/BrowserJS</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato');
+      *,
+      *:before,
+      *:after {
+          box-sizing: border-box;
+      }
+      html,
+      body {
+          height: 100%;
+          background: papayawhip;
+      }
+      body {
+          max-width: 1200px;
+          border: 0px;
+          margin: 30px auto;
+          padding: 30px;
+          color: midnightblue;
+          font-family: 'Lato', sans-serif;
+      }
+      hr {
+          background: salmon;
+          border: 2px solid salmon;
+          margin: 100px 0px;
+      }
+      label {
+          display: inline-block;
+          padding-bottom: 20px;
+      }
+      a {
+          color: dodgerblue;
+      }
+      time,
+      code {
+          border-radius: 6px;
+          padding: 1px 3px 1px;
+          font-size: 1.15em;
+      }
+      time,
+      code,
+      pre {
+          background: lightsalmon;
+          border: 1px solid rosybrown;
+      }
+      pre {
+          display: inline-block;
+          width: 100%;
+          border-radius: 6px;
+          padding: 9px 10px;
+      }
+      pre code {
+          border: 0px;
+          padding: 0px;
+      }
+      kbd {
+          background: midnightblue;
+          border: 1px solid palevioletred;
+          border-radius: 100px;
+          padding: 4px 8px;
+          color: antiquewhite;
+          font-size: 1.15em;
+      }
+      #movieAnswer:after {
+          content: '';
+          display: block;
+          height: 130px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+    <h1>Challenge #2: <small>DOM/Browser JavaScript</small></h1>
+
+    <h2>Introduction</h2>
+
+    <p>
+      Open this file in your text editor/IDE and follow the instructions for each section.
+      You may use any libraries or frameworks you like.
+      If you use a library, ensure it loads and runs on this page so that your answers will work when reviewed.
+      You do not need to write tests for any of the questions in this file.
+    </p>
+
+
+
+
+
+
+
+
+    <hr id="q1" />
+
+
+
+
+
+
+
+
+    <h2>#1</h2>
+
+    <label>
+      Based on the markup below, write 5 (jQuery or native) selectors in JavaScript to target the anchor.
+    </label>
+
+    <!-- Do not modify this block of markup -->
+    <main id="cow" class="moo">
+      <section class="woof bark">
+        <nav id="cat">
+          <a href="#" class="meow">Kitten</a>
+        </nav>
+      </section>
+    </main>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q2" />
+
+
+
+
+
+
+
+
+    <h2>#2</h2>
+
+    <label>
+      Give an example of JavaScript code that would run in the latest version of Chrome, but not in IE11.
+    </label>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q3" />
+
+
+
+
+
+
+
+
+    <h2>#3</h2>
+
+    <label>
+      Create an input field that only accepts numbers.
+      When the field is upated its value should be displayed in an <code>H3</code> tag below the input field.
+    </label>
+
+    <div id="app">
+      <!-- Write your code here -->
+    </div>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q4" />
+
+
+
+
+
+
+
+
+    <h2>#4</h2>
+
+    <label>
+      Display the date/time of when the page loaded in this format <time>2017/12/21, 6:59:22 PM</time>.
+    </label>
+
+    <div>
+      <time id="current-time"></time>
+    </div>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q5" />
+
+
+
+
+
+
+
+
+    <h2>#5</h2>
+
+    <label>
+      Write a function so that if it were ran on this page:
+      <pre><code>https://nodejs.org/dist/latest/docs/api/fs.html#fs_fs_writefile_file_data_options_callback</code></pre>
+      it would return this object:
+      <pre><code>{
+    scrollTo: '#fs_fs_writefile_file_data_options_callback',
+    domain: 'nodejs.org',
+    file: '/dist/latest/docs/api/fs.html'
+}</code></pre>
+      The same function, if ran on this page:
+      <pre><code>https://github.com/vuejs/vue#introduction</code></pre>
+      would return this object:
+      <pre><code>{
+    scrollTo: '#introduction',
+    domain: 'github.com',
+    file: '/vuejs/vue'
+}</code></pre>
+    </label>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q6" />
+
+
+
+
+
+
+
+
+    <h2>#6</h2>
+
+    <label>
+      When a user clicks on this link, ensure they are not navigated to a new page, and change the background color of the button to <code>mediumspringgreen</code>.
+      You may write any HTML, CSS, or JavaScript to achieve this, and you can modify the existing markup for this question in any way.
+    </label>
+
+    <div id="color-changer">
+      <p><a href="enable-javascript.html">Make button Green</a></p>
+      <button>Button</button>
+    </div>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q7" />
+
+
+
+
+
+
+
+
+    <h2>#7</h2>
+
+    <label>
+      On every page load, one of the following vegetables should be randomly replaced by a fruit, the other two vegetables should remain as supplied.
+      You may pick any fruit (except tomato, for obvious reasons).
+    </label>
+
+    <ul id="vegetables-and-fruit">
+      <li>Potato</li>
+      <li>Cabbage</li>
+      <li>Celery</li>
+    </ul>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q8" />
+
+
+
+
+
+
+
+
+    <h2>#8</h2>
+
+    <label>
+      Load the data from links.json into a bulleted list of anchor tags
+    </label>
+
+
+    <h4>Charities:</h4>
+    <ul id="charities">
+    </ul>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q9" />
+
+
+
+
+
+
+
+
+    <h2>#9</h2>
+
+    <label>
+      Assume the <code>screenname</code> variable was set by a user of the site/app, update the contents of the <code>#username</code> div so that it contains the value in a safe manner.
+    </label>
+
+    <div id="username"></div>
+
+    <script>
+      // Do not change this line
+      let screenname = '<strong>DrTaco</strong>';
+
+      // Write your code below
+
+    </script>
+
+
+
+
+
+
+
+
+    <hr id="q10" />
+
+
+
+
+
+
+
+
+    <h2>#10</h2>
+
+    <label>
+      When the submit button is pressed, sanitize the inputs of the text field and place the value in the span tag.
+    </label>
+
+    <div id="movieQuestion">
+      <label for="movie">Favorite Movie</label>
+      <input id="movie" type="text">
+      <button id="submitMovie">Submit</button>
+    </div>
+
+    <div id="movieAnswer">
+      Your favorite movie is <span id="favoriteMovie"></span>.
+    </div>
+
+    <script>
+      // Write your code here
+    </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
