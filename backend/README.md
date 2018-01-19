@@ -1,21 +1,13 @@
 
-# Backend Developer Test
-
-If you are applying for a frontend specific role with no backend expectations, you can skip this folder's challenges.
+# Backend Developer Assessment
 
 ## Challenge
 
-Create an API written in Node.js that passes the tests in this folder. Writing additional tests is not required for this challenge.
+Create an API written in Node.js that passes as many of the tests in `test/crud.spec.js` as you can. 
 
-This section has been broken down into smaller steps to account for the fact that most people will not finish the whole thing.
-
-Finish these steps **in order**, rather than trying to do it all at once. A **fully functioning** solution to just step 1 will be weighted higher than a non-functioning attempt at all steps.
-
-1. **Hold data in memory:** Just pass the tests provided by saving objects in memory while the server runs. A server restart will lose all existing data.
-1. **Persist data between server restarts:** You are free to choose any solution as long as requirement 2 below (all dependencies, including persistence layers, should come from NPM) is respected. Some common options:
-    * Read/write JSON directly to a text file
-    * Use a Node specific lightweight document store like [LokiJS](https://rawgit.com/techfort/LokiJS/master/jsdoc/tutorial-Persistence%20Adapters.html) or [lowdb](https://github.com/typicode/lowdb)
-    * Use [sqlite3](https://github.com/mapbox/node-sqlite3) on its own, or with an ORM like [Sequelize](http://docs.sequelizejs.com)
+Data **DOES NOT** need to persist between server restarts, unless you already have extensive Node.js experience and want to show us your chops. 
+In that case, we recommend using a lightweight document store like like [LokiJS](https://rawgit.com/techfort/LokiJS/master/jsdoc/tutorial-Persistence%20Adapters.html) 
+or [lowdb](https://github.com/typicode/lowdb), but feel free to use anything so long as it can be installed with `npm install`.
 
 ### Requirements
 
@@ -24,8 +16,9 @@ Finish these steps **in order**, rather than trying to do it all at once. A **fu
     ```
     npm install
     npm start
+    npm test
     ```
-1. When installing any dependencies, make sure to save them to the local `package.json` so that anyone checking out your changes can install the correct dependencies.
+1. When installing any dependencies, make sure to save them to the local `package.json` so that anyone checking out your changes can reproduce the build.
 1. You may use any Node.js framework that you'd like (Express, Hapi, etc.) or none at all, and any other dependencies you find helpful.
 
 ### Setup
