@@ -9,7 +9,12 @@
     "test": "./node_modules/.bin/jest --env=node --forceExit",
     "start": "node index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "lowdb": "^1.0.0",
+    "shortid": "^2.2.8"
+  },
   "devDependencies": {
     "axios": "^0.17.1",
     "jest": "^22.0.4"
