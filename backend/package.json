@@ -10,12 +10,12 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.16.3",
-    "nodemon": "^1.18.4"
+    "express": "^4.16.3"
   },
   "devDependencies": {
     "axios": "^0.17.1",
-    "jest": "^22.0.4"
+    "jest": "^22.0.4",
+    "nodemon": "^1.18.4"
   },
   "jest": {
     "testMatch": [
