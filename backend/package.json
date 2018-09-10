@@ -9,7 +9,10 @@
     "test": "./node_modules/.bin/jest --env=node --forceExit",
     "start": "node index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  },
   "devDependencies": {
     "axios": "^0.17.1",
     "jest": "^22.0.4"
