@@ -74,7 +74,7 @@ router.delete('/cats/:id', (req, res) => {
     }
 
     catsMap.delete(id)
-    res.json(catsMap).status(204).end()
+    res.status(204).end()
 })
 
 module.exports = router
