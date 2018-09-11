@@ -1,58 +1,70 @@
 const express = require('express')
 const router = express.Router()
 
-let catsObject = {"catsList": []}
+let catsMap = new Map()
 
 let currentId = 0
 
 function generateUniqueId() {
-    currentId = catsObject.catsList.length + 1;
+    currentId += 1;
     return currentId
 }
 
 let newCat = (id, name) => {
-    return {id: id, name: name}
+    return { 'id': id, 'name': name }
 }
 
 // POST to /cats creates an object, and returns the created object with a generated id
 // POST to /cats a second time creates a new object, with a unique id
-router.post('/cats',(req, res) => {
-    if (catsObject.catsList.length == 0) {
-        generateUniqueId()
-        catsObject.catsList.push(newCat(currentId, 'Mittens'))
-        res.json(newCat(currentId, 'Mittens'))
-    } else {
-        generateUniqueId()
-        catsObject.catsList.push(newCat(currentId, 'Mittens II'))
-        res.json(newCat(currentId, 'Mittens II'))
-    }
+router.post('/cats', (req, res) => {
+    let id = generateUniqueId()
+    let cat = newCat(currentId, req.body['name'])
+    catsMap.set(id, cat)
+    res.json(cat)
 })
 
 // GET to /cats returns a list of cats that contains the previously created cat object
 router.get('/cats', (req, res) => {
-    res.send(catsObject.catsList)
+    let catEntries = catsMap.values()
+    let catsList = []
+    for (let cat of catEntries) {
+        catsList.push(cat)
+    }
+
+    res.json(catsList)
 })
 
 // GET to /cats/:id returns the same object created from the first POST request when called with the generated id
 // GET to /cats/:id returns a 404 status code for a cat that does not exist
 router.get('/cats/:id', (req, res) => {
-    let id = req.params.id -1
-    array = catsObject.catsList.map(m => m.id)
-    if (!array.includes(parseInt(id)))
+    let id = req.params.id
+
+    if (!catsMap.has(id)) {
         res.status(404).send('404')
-        
-    res.json(catsObject.catsList[id])
+        return
+    }
+
+    res.json(catsMap.get(id))
 })
 
 // PUT to /cats/:id updates the record identified by :id
-router.put('/cats/:id/', (req, res) => {
-    let id = req.params.id -1
-    let name = req.params.name
-    let newName = catsObject.catsList[id].name = name
-    res.json(newName)
+// PUT to /cats/:id with an invalid id responds with a 404 status code
+router.put('/cats/:id', (req, res) => {
+    let id = req.params.id
+    console.log('new name: ', req.body['name'])
+    if (!req.body['name']) {
+        res.status(404).send('404')
+        return
+    }
+
+    catsMap.catsList[id].name = req.body['name']
+    res.json(catsMap.catsList[id])
 })
 
-// PUT to /cats/:id with an invalid id responds with a 404 status code
 // DELETE to /cats/:id removes the record
 // DELETE to /cats/:id with an invalid id responds with a 404 status code
+router.delete('/cats/:id', (req, res) => {
+
+})
+
 module.exports = router
