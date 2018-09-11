@@ -37,7 +37,7 @@ router.get('/cats', (req, res) => {
 // GET to /cats/:id returns the same object created from the first POST request when called with the generated id
 // GET to /cats/:id returns a 404 status code for a cat that does not exist
 router.get('/cats/:id', (req, res) => {
-    let id = req.params.id
+    let id = parseInt(req.params.id)
 
     if (!catsMap.has(id)) {
         res.status(404).send('404')
@@ -50,15 +50,15 @@ router.get('/cats/:id', (req, res) => {
 // PUT to /cats/:id updates the record identified by :id
 // PUT to /cats/:id with an invalid id responds with a 404 status code
 router.put('/cats/:id', (req, res) => {
-    let id = req.params.id
+    let id = parseInt(req.params.id)
     console.log('new name: ', req.body['name'])
     if (!req.body['name']) {
         res.status(404).send('404')
         return
     }
 
-    catsMap.catsList[id].name = req.body['name']
-    res.json(catsMap.catsList[id])
+    catsMap.get(id).name = req.body['name']
+    res.json(catsMap.set(id, name))
 })
 
 // DELETE to /cats/:id removes the record
