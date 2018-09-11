@@ -1,16 +1,11 @@
-const http = require('http')
-const port = 8080
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const catsRouter = require('./routes/cats')
 
-const requestHandler = (request, response) => {
-  response.end("You might want some more request handlers")
-}
+app.use(bodyParser.json())
+app.use(catsRouter)
+app.use(express.static('public'))
 
-const server = http.createServer(requestHandler)
-
-server.listen(port, (err) => {
-  if (err) {
-    return console.log('something bad happened', err)
-  }
-
-  console.log(`server is listening on port ${port}`)
-})
+const port = process.env.port || 8080
+app.listen(port, () => console.info(`Server running on localhost:${port}`))

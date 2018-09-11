@@ -7,12 +7,17 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/jest --env=node --forceExit",
-    "start": "node index.js"
+    "start": "node index.js",
+    "startWatch": "nodemon index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
   "devDependencies": {
     "axios": "^0.17.1",
-    "jest": "^22.0.4"
+    "jest": "^22.0.4",
+    "nodemon": "^1.18.4"
   },
   "jest": {
     "testMatch": [
