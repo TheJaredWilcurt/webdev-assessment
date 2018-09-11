@@ -51,14 +51,18 @@ router.get('/cats/:id', (req, res) => {
 // PUT to /cats/:id with an invalid id responds with a 404 status code
 router.put('/cats/:id', (req, res) => {
     let id = parseInt(req.params.id)
-    console.log('new name: ', req.body['name'])
-    if (!req.body['name']) {
+    let name = req.body['name']
+    if (!catsMap.has(id)) {
         res.status(404).send('404')
         return
     }
 
-    catsMap.get(id).name = req.body['name']
-    res.json(catsMap.set(id, name))
+    catId = catsMap.get(id)
+    catName = catId.name
+    catName = req.body
+
+    // catsMap.get(id).name = req.body['name']
+    res.json(catsMap.set('name', catName))
 })
 
 // DELETE to /cats/:id removes the record
