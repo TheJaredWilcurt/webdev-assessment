@@ -6,7 +6,7 @@
 Create an API written in Node.js that passes as many of the tests in `test/crud.spec.js` as you can. 
 
 Data **DOES NOT** need to persist between server restarts, unless you already have extensive Node.js experience and want to show us your chops. 
-In that case, we recommend using a lightweight document store like like [LokiJS](https://rawgit.com/techfort/LokiJS/master/jsdoc/tutorial-Persistence%20Adapters.html) 
+In that case, we recommend using a lightweight document store like [LokiJS](https://rawgit.com/techfort/LokiJS/master/jsdoc/tutorial-Persistence%20Adapters.html) 
 or [lowdb](https://github.com/typicode/lowdb), but feel free to use anything so long as it can be installed with `npm install`.
 
 ### Requirements
