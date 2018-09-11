@@ -21,6 +21,7 @@ router.post('/cats', (req, res) => {
     let cat = newCat(currentId, req.body['name'])
     catsMap.set(id, cat)
     res.json(cat)
+    res.status(201).send('201')
 })
 
 // GET to /cats returns a list of cats that contains the previously created cat object
@@ -40,7 +41,7 @@ router.get('/cats/:id', (req, res) => {
     let id = parseInt(req.params.id)
 
     if (!catsMap.has(id)) {
-        res.status(404).send('404')
+        res.status(404).end()
         return
     }
 
@@ -53,22 +54,27 @@ router.put('/cats/:id', (req, res) => {
     let id = parseInt(req.params.id)
     let name = req.body['name']
     if (!catsMap.has(id)) {
-        res.status(404).send('404')
+        res.status(404).end()
         return
     }
 
-    catId = catsMap.get(id)
-    catName = catId.name
-    catName = req.body
+    cat = catsMap.get(id)
+    cat.name = req.body
 
-    // catsMap.get(id).name = req.body['name']
-    res.json(catsMap.set('name', catName))
+    res.json(cat.name)
 })
 
 // DELETE to /cats/:id removes the record
 // DELETE to /cats/:id with an invalid id responds with a 404 status code
 router.delete('/cats/:id', (req, res) => {
+    let id = parseInt(req.params.id)
+    if (!catsMap.has(id)) {
+        res.status(404).end()
+        return
+    }
 
+    catsMap.delete(id)
+    res.json(catsMap).status(204).end()
 })
 
 module.exports = router
