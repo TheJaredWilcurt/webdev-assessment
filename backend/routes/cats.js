@@ -18,7 +18,7 @@ let newCat = (id, name) => {
 // POST to /cats a second time creates a new object, with a unique id
 router.post('/cats', (req, res) => {
     let id = generateUniqueId()
-    let cat = newCat(id, req.body['name'])
+    let cat = newCat(id, req.body.name)
     catsMap.set(id, cat)
     res.json(cat)
     res.status(201).end()
@@ -52,7 +52,7 @@ router.get('/cats/:id', (req, res) => {
 // PUT to /cats/:id with an invalid id responds with a 404 status code
 router.put('/cats/:id', (req, res) => {
     let id = parseInt(req.params.id)
-    let name = req.body['name']
+    let name = req.body.name
     if (!catsMap.has(id)) {
         res.status(404).end()
         return
