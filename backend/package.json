@@ -7,7 +7,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/jest --env=node --forceExit",
-    "start": "node index.js"
+    "start": "node index.js",
+    "startWatch": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.16.3"
