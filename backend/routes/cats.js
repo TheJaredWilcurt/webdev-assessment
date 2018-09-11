@@ -21,7 +21,7 @@ router.post('/cats', (req, res) => {
     let cat = newCat(currentId, req.body['name'])
     catsMap.set(id, cat)
     res.json(cat)
-    res.status(201).send('201')
+    res.status(201).end()
 })
 
 // GET to /cats returns a list of cats that contains the previously created cat object
