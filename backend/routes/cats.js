@@ -3,11 +3,11 @@ const router = express.Router()
 
 let catsMap = new Map()
 
-let currentId = 0
+let counter = 0
 
 function generateUniqueId() {
-    currentId += 1;
-    return currentId
+    counter += 1;
+    return counter
 }
 
 let newCat = (id, name) => {
@@ -18,7 +18,7 @@ let newCat = (id, name) => {
 // POST to /cats a second time creates a new object, with a unique id
 router.post('/cats', (req, res) => {
     let id = generateUniqueId()
-    let cat = newCat(currentId, req.body['name'])
+    let cat = newCat(id, req.body['name'])
     catsMap.set(id, cat)
     res.json(cat)
     res.status(201).end()
