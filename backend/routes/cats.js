@@ -59,9 +59,9 @@ router.put('/cats/:id', (req, res) => {
     }
 
     cat = catsMap.get(id)
-    cat.name = req.body
+    cat.name = name
 
-    res.json(cat.name)
+    res.json(cat)
 })
 
 // DELETE to /cats/:id removes the record
